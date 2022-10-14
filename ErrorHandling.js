@@ -12,14 +12,23 @@ let studentData = `[
 ]`;
 
 let std = JSON.parse(studentData);
+const m = 23;
 
 try {
-    console.log(std[0].name);
+    m = 3;
+    // console.log(std[0].name);
   if (!std.fname) {
-    throw new Error("Data is not complete!");
+    throw new Error("Data is not complete");
   }
 } catch (error) {
-  console.log(error.message);
+    if (error instanceof ReferenceError) {
+      console.log("Reference Error Found!");
+    } else if (error instanceof TypeError) {
+      console.log("Type Error Found!");
+    } else {
+      console.log(`Other Error: ${error.message}!`);
+    }
+//   console.log(error.message);
 } finally {
-    console.log('Error Found!');
+    console.log("Finally this the Error!");
 }
