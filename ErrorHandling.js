@@ -20,4 +20,6 @@ try {
   }
 } catch (error) {
   console.log(error.message);
+} finally {
+    console.log('Error Found!');
 }
