@@ -14,6 +14,7 @@ let studentData = `[
 let std = JSON.parse(studentData);
 
 try {
+    console.log(std[0].name);
   if (!std.fname) {
     throw new Error("Data is not complete!");
   }
